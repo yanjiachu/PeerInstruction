@@ -1,0 +1,104 @@
+.container {
+  padding: 0 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 44px);
+  box-sizing: border-box;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.logo-image {
+  height: 200rpx;
+  width: 200rpx;
+  margin: 0 0 60rpx;
+  border-radius: 85px;
+  text-align: center;
+  max-width: 100%;
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+}
+
+.uni-form-item {
+  margin-bottom: 40rpx;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.uni-input {
+  font-size: 30rpx;
+  padding: 7px 0;
+  margin-bottom: 40rpx;
+  border-color: rgba(0, 0, 0, 1);
+  background-color: rgba(248, 248, 248, 1);
+  border-radius: 25rpx;
+  color: rgba(0, 0, 0, 1);
+  text-align: left;
+  border-width: 0 0 6rpx;
+  border-style: solid;
+  height: 88rpx;
+  width: 500rpx;
+  display: block;
+  overflow: hidden;
+}
+
+.uni-picker-type{
+  line-height: 25px;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  margin: 0;
+}
+
+.captcha-button {
+  background-color: rgba(153, 0, 51, 1);
+  border: 3px solid rgba(153, 0, 51, 1);
+  color: #fff;
+  border-width: 0px 0 3px;
+  font-size: 13px;
+  height: 37px;
+  margin-top: 60rpx;
+  width: 100%;
+  line-height: 46rpx;
+}
+
+.reset-button {
+  background-color: rgba(153, 0, 51, 1);
+  border: 3px solid rgba(153, 0, 51, 1);
+  color: #fff;
+  border-width: 0px 0 3px;
+  font-size: 13px;
+  height: 37px;
+  margin-top: 60rpx;
+  width: 100%;
+  line-height: 46rpx;
+}
+
+.links {
+  text-align: center;
+  margin-top: 40rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.links view {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 10rpx;
+}
+
+.links .link-highlight {
+  margin: 0;
+  color: #fff;
+}
