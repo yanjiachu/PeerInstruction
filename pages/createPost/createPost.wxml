@@ -1,0 +1,17 @@
+<!--pages/createPost/createPost.wxml-->
+<view class="container publish">
+  <form bindsubmit="btnsub">
+    <!-- 标题输入框 -->
+    <view class="form-group mt">
+    <input class="input-title" placeholder="标题" name="title"  /></view>
+
+    <!-- 内容输入框 -->
+    <view class="form-group mt">
+    <textarea class="input-content" placeholder="内容" name="content"></textarea></view>
+
+    <!-- 提交按钮 -->
+    <view class="form-group mt text-center">
+      <button form-type="submit" class="submit-btn" >确认提交</button>
+    </view>
+  </form>
+</view>

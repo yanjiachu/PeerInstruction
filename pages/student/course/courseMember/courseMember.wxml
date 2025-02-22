@@ -1,0 +1,40 @@
+<!--pages/teacher/course/courseMember.wxml-->
+<view class="container">
+
+<view class="header">
+  <text class="course-name">{{courseName}}</text>
+</view>
+
+<view class="body">
+  <!-- 授课教师部分 -->
+  <view class="section">
+    <view class="tab-bar">
+      <view class="tab-bar-left">
+        <text class="title">教师</text>
+      </view>
+    </view>
+    <view class="teacher">
+      <image class="avatar" src="/static/courseDetail/avater.png" mode="aspectFill"></image>
+      <text class="name">{{teacherName}}</text>
+    </view>
+  </view>
+
+  <view class="divider-line"></view>
+
+  <!-- 学生部分 -->
+  <view class="section">
+    <view class="tab-bar">
+      <view class="tab-bar-left">
+        <text class="title">学生</text>
+      </view>
+    </view>
+  
+    <view class="student" wx:for="{{students}}" wx:key="id">
+      <image class="avatar" src="/static/courseDetail/avater.png" mode="aspectFill"></image>
+      <text class="name">{{item.name}}</text>
+      <text wx:if="{{item.isMe}}" class="tag-me">我</text>
+    </view>
+  </view>  
+</view>
+
+</view>

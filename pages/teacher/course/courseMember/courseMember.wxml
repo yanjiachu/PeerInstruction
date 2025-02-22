@@ -1,0 +1,51 @@
+<!--pages/teacher/course/courseMember.wxml-->
+<view class="container">
+
+  <view class="header">
+    <text class="course-name">{{courseName}}</text>
+  </view>
+
+  <view class="body">
+    <!-- 授课教师部分 -->
+    <view class="section">
+      <view class="tab-bar">
+        <view class="tab-bar-left">
+          <text class="title">教师</text>
+        </view>
+      </view>
+      <view class="teacher">
+        <image class="avatar" src="/static/courseDetail/avater.png" mode="aspectFill"></image>
+        <text class="name">{{teacherName}}</text>
+      </view>
+    </view>
+
+    <view class="divider-line"></view>
+
+    <!-- 学生部分 -->
+    <view class="section">
+      <view class="tab-bar">
+        <view class="tab-bar-left">
+          <text class="title">学生</text>
+        </view>
+        <view class="tab-bar-right">
+          <view class="button" bindtap="onManageButtonTap">
+            <image class="icon" src="/static/courseDetail/manage.png" mode="aspectFit"></image>
+          </view>
+        </view>
+      </view>
+    
+      <view class="student" wx:for="{{students}}" wx:key="id">
+        <image class="avatar" src="/static/courseDetail/avater.png" mode="aspectFill"></image>
+        <text class="name">{{item.name}}</text>
+        <view wx:if="{{showDeleteIcon}}" class="delete-icon" bindtap="onDeleteIconTap" data-id="{{item.id}}">
+          <image src="/static/courseDetail/cross.png" mode="aspectFit"></image>
+        </view>
+      </view>
+    </view>  
+  </view>
+
+  <!-- 弹窗 -->
+  <mp-dialog ext-class="dialog" mask="{{true}}" mask-closable="{{false}}" title="是否删除该学生？该操作不可撤销。"  show="{{showDialog}}" bindbuttontap="onDialogButtonTap" buttons="{{buttons}}">
+  </mp-dialog>
+
+</view>

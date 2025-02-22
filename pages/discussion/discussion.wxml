@@ -1,0 +1,28 @@
+<view class="container">
+  <!-- 页面标题 -->
+  <view class="header">
+    
+    <text class="title">课程讨论区</text>
+    
+  </view>
+  <view class="mybtn">
+  <!-- 发布帖子和我的帖子按钮 -->
+    <button class="btn" bindtap="createPost">发布帖子</button>
+    <button class="btn" bindtap="myPosts">我的帖子</button>
+  </view>
+  <!-- 帖子列表 -->
+  <scroll-view scroll-y="true" class="post-list">
+    <block wx:for="{{posts}}" wx:key="id">
+      
+      <view class="post-item" bindtap="viewPost" data-id="{{item._id}}">
+        <!-- 显示帖子标题 -->
+        <text class="post-title">{{item.title}}</text>
+        <!-- 帖子作者和日期信息 -->
+        <view class="post-info">
+          <text class="author">作者：{{item.username}}</text>
+          <text class="date">{{item.timestamp}}</text>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>

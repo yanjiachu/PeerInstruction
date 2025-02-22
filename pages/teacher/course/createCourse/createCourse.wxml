@@ -1,0 +1,46 @@
+<view class="container">
+  <!-- 添加标题 -->
+  <view class="weui-form__text-area">
+    <view class="weui-form__title">创建课程</view>
+  </view>
+  
+  <form bindsubmit="submitForm" report-submit="true">
+    <view class="weui-cells weui-cells_form">
+      
+      <!-- 课程名称输入框 -->
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <label class="weui-label align-left">课程名称</label>
+        </view>
+        <view class="weui-cell__bd">
+          <input class="weui-input" name="courseName" placeholder="请输入课程名称" bindinput="onCourseNameInput" value="{{courseName}}"required />
+        </view>
+      </view>
+      
+      <!-- 课程描述输入框 -->
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <label class="weui-label align-left">课程描述</label>
+        </view>
+        <view class="weui-cell__bd">
+          <textarea class="weui-textarea" name="description" placeholder="请输入课程描述" rows="3" bindinput="onDescriptionInput" value="{{description}}"required></textarea>
+        </view>
+      </view>
+      
+      <!-- 是否公开选择 -->
+      <view class="weui-cell">
+        <view class="weui-cell__hd">
+          <label class="weui-label align-left">是否公开</label>
+        </view>
+        <view class="weui-cell__bd">
+          <switch name="isPublic" checked="{{isPublic}}" bindchange="onIsPublicChange" />
+        </view>
+      </view>
+    </view>
+    
+    <!-- 提交按钮 -->
+    <view class="button-area">
+      <view class="weui-btn weui-btn_primary" bindtap="submit">创建课程</view>
+    </view>
+  </form>
+</view>
