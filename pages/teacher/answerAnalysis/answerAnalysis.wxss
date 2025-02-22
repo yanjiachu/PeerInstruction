@@ -1,0 +1,27 @@
+.text {
+  text-align: center;
+  margin-top: 20rpx;
+  font-size: 36rpx;
+  color: rgb(0, 0, 0);
+}
+
+.uni-form-item {
+  display: flex;
+  justify-content: center;
+}
+
+.chart{
+  height: 550rpx;
+  margin: 0 auto;
+  padding-top: 50rpx;
+  background: #fff;
+}
+ 
+.chart-info{
+  height: 500rpx;
+}
+ 
+.canvas {
+    width: 380px;
+    height: 400px;
+}
