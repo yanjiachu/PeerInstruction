@@ -1,0 +1,25 @@
+<view class="container">
+
+  <image src="/static/logReg/login/centerpic.jpg" class="background-image"></image>
+
+  <view class="logo">
+    <image src="/static/logReg/login/centerico.jpg" mode="aspectFill" class="logo-image"></image>
+  </view>
+
+  <view class="uni-form-item">
+    <text class="text"> 教师：{{userInfo.name}}</text>
+  </view>
+
+  <view class="uni-form-item">
+    <button class="button" bindtap="changeUserInfo">修改个人信息</button>
+
+    <!-- <button class="button" bindtap="myClass">我参与的课程</button>
+
+  <button class="button" bindtap="myHistory">我的历史记录</button> -->
+
+    <button class="button" bindtap="discussion">我的所有帖子</button>
+
+    <button class="button" bindtap="exit">退出登录</button>
+  </view>
+
+</view>

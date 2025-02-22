@@ -1,0 +1,34 @@
+<view class="container">
+  <!-- 背景图片 -->
+  <image src="/static/logReg/login/background.jpg" class="background-image"></image>
+
+  <!-- 忘记密码表单 -->
+  <view class="uni-form-item">
+    <!-- 学号/工号输入框 -->
+    <input class="uni-input" type="text" placeholder="学号/工号" data-field="username" bindinput="handleInput" />
+
+    <!-- 邮箱输入框 -->
+    <input class="uni-input" type="text" placeholder="邮箱" data-field="email" bindinput="handleInput" />
+
+    <!-- 验证码输入框 -->
+    <input class="uni-input" type="text" placeholder="验证码" data-field="captcha" bindinput="handleInput" />
+    <!-- 获取验证码按钮 -->
+    <button class="captcha-button" bindtap="sendCaptcha">获取验证码</button>
+  </view>
+
+  <view class="uni-form-item">
+    <!-- 新密码输入框 -->
+    <input class="uni-input" type="password" placeholder="新密码" data-field="newPassword" bindinput="handleInput" />
+    <!-- 重置密码按钮 -->
+    <button class="reset-button" bindtap="resetPassword">重置密码</button>
+  </view>
+
+  <!-- 登录、注册链接 -->
+  <view class="links">
+    <!-- 登录链接 -->
+    <view class="link-highlight" bindtap="onLoginTap">返回登录</view>
+    <view>|</view>
+    <!-- 注册链接 -->
+    <view class="link-highlight" bindtap="onRegisterTap">没有账号？注册</view>
+  </view>
+</view>

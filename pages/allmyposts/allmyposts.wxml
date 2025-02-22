@@ -1,0 +1,24 @@
+<!-- pages/allmyposts/allmyposts.wxml -->
+<view class="container">
+  <!-- 页面标题 -->
+  <view class="header">
+    <text class="title">我的所有帖子</text>
+  </view>
+
+  <!-- 帖子列表 -->
+  <scroll-view scroll-y="true" class="post-list">
+    <block wx:for="{{posts}}" wx:key="id">
+      <view class="post-item" bindtap="viewPost" data-id="{{item._id}}">
+        <text class="post-title">{{item.title}}</text>
+        <view class="post-info">
+          <text class="author">作者：{{item.username}}</text>
+          <text class="date">{{item.timestamp}}</text>
+        </view>
+      </view>
+    </block>
+    <!-- 如果没有帖子，显示提示信息 -->
+    <view wx:if="{{posts.length === 0}}" class="no-posts">
+      <text>您还没有发布任何帖子</text>
+    </view>
+  </scroll-view>
+</view>

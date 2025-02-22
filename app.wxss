@@ -1,0 +1,269 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50rpx;
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    font-size: 28rpx;
+}
+
+.title {
+    font-size: 36rpx;
+    margin-bottom: 50rpx;
+    text-align: center;
+}
+
+.header {
+    text-align: center;
+    font-weight: bold;
+    padding: 10rpx 0;
+    background-color: #e6e6e6;
+}
+
+.greeting {
+    text-align: center;
+    margin: 10rpx 0;
+    color: #333;
+    font-size: 28rpx;
+}
+
+/**输入框**/
+input {
+    width: 100%;
+    padding: 20rpx;
+    border: 1rpx solid #ddd;
+    border-radius: 10rpx;
+    font-size: 28rpx;
+}
+
+.input-field {
+    width: 80%;
+    margin-bottom: 30rpx;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/**按钮**/
+.greenBtn {
+    width: 80%;
+    padding: 25rpx 0;
+    background-color: #07C160;
+    color: #fff;
+    border-radius: 10rpx;
+    text-align: center;
+    font-size: 30rpx;
+    margin-top: 40rpx;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grayBtn {
+    width: 80%;
+    padding: 25rpx 0;
+    background-color: #808080;
+    color: #fff;
+    border-radius: 10rpx;
+    text-align: center;
+    font-size: 30rpx;
+    margin-top: 40rpx;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.darkBtn {
+    width: 80%;
+    padding: 25rpx 0;
+    background-color: rgb(177, 226, 177);
+    color: rgb(0, 0, 0);
+    border-radius: 10rpx;
+    text-align: center;
+    font-size: 30rpx;
+    margin-top: 40rpx;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.delete-btn {
+    display: flex;
+    /* 使用flex布局 */
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
+    flex: 0;
+    background-color: #ff4c4c;
+    color: #fff;
+    border-radius: 25rpx;
+    height: 130rpx;
+}
+
+/**课程和章节列表**/
+
+.list-title {
+    position: sticky;
+    /* 使其固定在顶部 */
+    top: 0;
+    /* 定位至容器的顶部 */
+    z-index: 1;
+    /* 使其始终在其他内容的上面 */
+}
+
+
+.list-item-class {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rpx;
+    border-bottom: 1rpx solid #ddd;
+    background-color: #e2a6a6;
+    border-radius: 20rpx;
+    margin-bottom: 10rpx;
+    /* 增加每个item之间的距离 */
+    height: 150rpx;
+}
+
+.list-item-chapter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rpx;
+    border-bottom: 1rpx solid #ddd;
+    background-color: #85e4f5;
+    border-radius: 20rpx;
+    margin-bottom: 10rpx;
+    /* 增加每个item之间的距离 */
+    height: 150rpx;
+}
+
+.item-name {
+    flex: 1;
+    font-size: 35rpx;
+    width: 65%;
+    font-weight: bold;
+    white-space: normal;
+    /* 允许文本自动换行 */
+    word-wrap: break-word;
+    /* 如果需要的话，允许单词内的断行 */
+    display: -webkit-box;
+    /* 使用box模型 */
+    -webkit-line-clamp: 1;
+    /* 限制在两行 */
+    -webkit-box-orient: vertical;
+    /* 设置为垂直方向 */
+    overflow: hidden;
+    /* 隐藏多余的文本 */
+}
+
+.item-text {
+    flex: 1;
+    font-size: 28rpx;
+    width: 65%;
+    white-space: normal;
+    /* 允许文本自动换行 */
+    word-wrap: break-word;
+    /* 如果需要的话，允许单词内的断行 */
+    display: -webkit-box;
+    /* 使用box模型 */
+    -webkit-line-clamp: 2;
+    /* 限制在两行 */
+    -webkit-box-orient: vertical;
+    /* 设置为垂直方向 */
+    overflow: hidden;
+    /* 隐藏多余的文本 */
+}
+
+
+
+/**额外文本**/
+.extra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30rpx;
+    font-size: 28rpx;
+    gap: 20rpx;
+}
+
+.extra text {
+    color: #007BFF;
+    /* 设置文字为蓝色 */
+    text-decoration: underline;
+    /* 添加下划线 */
+}
+
+.gap_width {
+    width: 15rpx;
+}
+
+.gap_height {
+    height: 15rpx;
+}
+
+/* 分隔线样式 */
+.separator {
+    height: 3rpx;
+    /* 设置高度为3像素 */
+    background-color: #ddd;
+    /* 设置背景颜色为淡灰色 */
+    margin: 20rpx 0;
+    /* 设置上下外边距为20像素，左右外边距为0 */
+}
+
+
+/*论坛*/
+.comment-title {
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    word-wrap: break-word;
+    white-space: normal;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    /* Number of lines you want to display */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    /* This will show '...' at the end when text is cut off */
+}
+
+.comment-author {
+    font-weight: bold;
+    color: #333;
+    word-wrap: break-word;
+    white-space: normal;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    /* Number of lines you want to display */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    /* This will show '...' at the end when text is cut off */
+}
+
+.comment-time {
+    font-size: 25rpx;
+    color: #666;
+    word-wrap: break-word;
+    white-space: normal;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    /* Number of lines you want to display */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    /* This will show '...' at the end when text is cut off */
+}
+
+.comment-content {
+    font-size: 28rpx;
+    color: #666;
+    word-wrap: break-word;
+    white-space: normal;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* Number of lines you want to display */
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    /* This will show '...' at the end when text is cut off */
+}

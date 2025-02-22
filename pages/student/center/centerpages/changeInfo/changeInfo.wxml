@@ -1,0 +1,15 @@
+<view class="container">
+  <image src="/static/logReg/login/background.jpg" class="background-image"></image>
+  <view class="logo">
+    <image src="/static/logReg/login/ico.jpg" mode="aspectFill" class="logo-image"></image>
+  </view>
+  <!-- 用户信息编辑 -->
+  <view class="uni-form-item">
+    <input class="uni-input" placeholder="用户名" bindinput="bindnameInput" value="{{userInfo.name}}" />
+  </view>
+  <view class="uni-form-item">
+    <input class="uni-input" placeholder="邮箱" bindinput="bindEmailInput" value="{{userInfo.email}}" />
+  </view>
+  <button class="reset-button" bindtap="saveUserInfo">保存</button>
+  <button class="reset-button" bindtap="returnIndex">返回主页</button>
+</view>

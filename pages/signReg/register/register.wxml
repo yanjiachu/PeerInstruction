@@ -1,0 +1,36 @@
+<view class="container">
+  <!-- 背景图片 -->
+  <image src="/static/logReg/login/background.jpg" class="background-image"></image>
+
+  <!-- 注册表单 -->
+  <view class="uni-form-item">
+    <input class="uni-input" type="text" placeholder="学号/工号" data-field="username" bindinput="handleInput" />
+
+    <input class="uni-input" type="password" placeholder="密码" data-field="password" bindinput="handleInput" />
+
+    <input class="uni-input" type="text" placeholder="姓名" data-field="name" bindinput="handleInput" />
+
+    <input class="uni-input" type="text" placeholder="邮箱" data-field="email" bindinput="handleInput" />
+
+    <picker value="{{userType}}" range="{{optionsValues}}" bindchange="optionsChange" class="uni-picker-type">
+      <view class="uni-picker-type-text">{{optionsValues[userType]}}</view>
+    </picker>
+  </view>
+
+  <view class="uni-form-item">
+    <!-- 验证码发送和验证部分 -->
+    <!-- <input class="uni-input" type="text" placeholder="验证码" data-field="captcha" bindinput="handleInput" />
+
+    <button class="captcha-button" bindtap="sendCaptcha">发送验证码</button> -->
+
+    <!-- 注册按钮 -->
+    <button class="register-button" bindtap="register">注册</button>
+  </view>
+
+  <!-- 登录、忘记密码 -->
+  <view class="links">
+    <view class="link-highlight" bindtap="onLoginTap">已有账号？登录</view>
+    <view>|</view>
+    <view class="link-highlight" bindtap="onForgetTap">忘记密码？</view>
+  </view>
+</view>

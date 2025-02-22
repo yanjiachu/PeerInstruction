@@ -1,0 +1,77 @@
+/* 容器样式 */
+.container {
+  padding: 20rpx;
+  background-color: #ffe5e5; /* 浅红色背景 */
+  min-height: 100vh;
+}
+
+/* 标题样式 */
+.header {
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+
+.title {
+  font-size: 42rpx; /* 标题字体大小 */
+  color: #d32f2f; /* 深红色，与其他页面一致 */
+  font-weight: bold;
+  padding: 10rpx 0;
+  border-bottom: 2rpx solid #ff4d4f; /* 红色下划线装饰 */
+  letter-spacing: 2rpx; /* 增加字符间距 */
+}
+
+/* 帖子列表滚动视图 */
+.post-list {
+  margin-top: 20rpx;
+  padding-bottom: 20rpx;
+  max-height: 80vh; /* 限制滚动区域高度 */
+  overflow-y: auto; /* 启用垂直滚动 */
+}
+
+/* 帖子项 */
+.post-item {
+  background-color: #ffffff; /* 白色背景 */
+  border-radius: 10rpx; /* 圆角设计 */
+  padding: 20rpx; /* 内边距 */
+  margin-bottom: 20rpx; /* 项目间距 */
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* 添加悬停动画 */
+}
+
+.post-item:active {
+  transform: scale(0.98); /* 点击缩放效果 */
+  box-shadow: 0 1rpx 4rpx rgba(0, 0, 0, 0.1); /* 阴影减弱 */
+}
+
+/* 帖子标题 */
+.post-title {
+  font-size: 34rpx; /* 标题字体大小 */
+  color: #ff3333; /* 明显的红色标题 */
+  font-weight: bold;
+  margin-bottom: 10rpx; /* 与内容分隔 */
+  line-height: 1.4; /* 提高可读性 */
+}
+
+/* 帖子信息 */
+.post-info {
+  display: flex;
+  justify-content: space-between; /* 左右对齐 */
+  font-size: 28rpx; /* 信息字体稍小 */
+  color: #666666; /* 灰色文本 */
+}
+
+.author {
+  color: #ff4d4f; /* 红色强调 */
+}
+
+.date {
+  color: #999999; /* 灰色日期 */
+}
+
+/* 无帖子提示信息 */
+.no-posts {
+  text-align: center; /* 居中对齐 */
+  font-size: 28rpx; /* 提示字体大小 */
+  color: #999999; /* 浅灰色提示文字 */
+  margin-top: 50rpx;
+}

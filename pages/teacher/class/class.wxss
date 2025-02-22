@@ -1,0 +1,253 @@
+/* pages/class/class.wxss */
+.container {
+  padding: 20px;
+  background-color: rgb(230, 230, 230); /* 淡粉色背景 */
+  color: rgb(153, 0, 51); /* 深紫色文字 */
+}
+
+.class-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.class-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(153, 0, 51);
+}
+
+.now-time {
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(153, 0, 51);
+}
+.class-subheader {
+  display: flex;
+  flex-direction: column; /* 设置主轴方向为垂直 */
+  align-items: flex-start; /* 水平左对齐 */
+  margin-bottom: 20px; /* 在底部留出20px的空隙 */
+}
+.subtitle {
+  font-family: Arial, sans-serif; /* 使用 Arial 字体，如果没有则使用 sans-serif */
+  font-size: 15px; /* 设置字体大小 */
+  color: rgb(153, 0, 51); /* 设置字体颜色 */
+  line-height: 1.5; /* 设置行高，使文字更易读 */
+  margin-bottom: 10px; /* 在底部留出一些空间 */
+}
+.end-class-button {
+  background-color: rgb(153, 0, 51); /* 红色背景 */
+  color: #fff; /* 白色文字 */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align:center;
+  margin-top: 20px; /* 与上面的内容留出一些空间 */
+  transition: background-color 0.3s ease;
+}
+
+.end-class-button:hover {
+  background-color: rgb(128, 0, 40); /* 鼠标悬停时的背景颜色 */
+}
+
+.toggle-button {
+  background-color: rgb(36, 71, 44);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+}
+
+.toggle-text {
+  flex: 1;
+}
+
+.toggle-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.3s ease;
+}
+
+.toggle-button:hover {
+  background-color: rgb(2, 102, 37);
+}
+
+.question-list {
+  margin-bottom: 20px;
+}
+
+.question-item {
+  border: 1px solid rgb(153, 0, 51);
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.question-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* 如果需要垂直居中，确保父元素有高度 */
+}
+.question-context {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: rgb(27, 27, 27);
+}
+
+.question-options {
+  margin-bottom: 10px;
+  width: 100%;
+  color: rgb(27, 27, 27);
+}
+
+.question-answer {
+  font-weight: bold;
+  color: rgb(27, 27, 27);
+  margin-bottom: 10px;
+}
+.question-details {
+  color: rgb(27, 27, 27);
+}
+.question-labels {
+  color: rgb(27, 27, 27);
+}
+
+.publish-count {
+  font-size: 14px;
+  color: rgb(153, 0, 51);
+  margin-top: 5px;
+}
+
+.current-question {
+  border: 1px solid rgb(153, 0, 51);
+  padding: 30px 15px;
+  border-radius: 5px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.countdown {
+  font-weight: bold;
+  color: rgb(153, 0, 51);
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: rgb(153, 0, 51);
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+button:hover {
+  background-color: rgb(128, 0, 40);
+}
+
+/* 新增的深绿色调 */
+.publish-button {
+  background-color: rgb(2, 102, 37);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  width: 80%;
+  text-align: center;
+}
+
+.publish-button:hover {
+  background-color: rgb(0, 82, 29);
+}
+
+.option-button {
+  background-color: transparent; /* 背景透明 */
+  border: 1px solid rgb(153, 0, 51); /* 红色边框 */
+  padding: 10px; /* 内边距 */
+  margin-left: 0px;
+  margin-bottom: 5px; /* 底部外边距 */
+  cursor: pointer; /* 鼠标指针样式 */
+  display: flex; /* 弹性布局 */
+  align-items: center; /* 垂直居中对齐 */
+  justify-content: flex-start; /* 内容左对齐 */
+  width: 100%; /* 宽度与页面相同 */
+  text-align: left; /* 文本左对齐 */
+  font-size: 15px;
+  color: rgb(153, 0, 51);
+  box-sizing: border-box; /* 包括内边距和边框在内计算宽度 */
+}
+
+
+.circle {
+  width: 20px; /* 圆圈的宽度 */
+  height: 20px; /* 圆圈的高度 */
+  border: 2px solid rgb(153, 0, 51); /* 边框颜色 */
+  border-radius: 50%; /* 圆形 */
+  margin-right: 10px; /* 与文本的间距 */
+  position: relative; /* 相对定位 */
+}
+
+.circle::after {
+  content: ''; /* 伪元素内容 */
+  position: absolute; /* 绝对定位 */
+  top: 50%; /* 垂直居中 */
+  left: 50%; /* 水平居中 */
+  transform: translate(-50%, -50%); /* 精确居中 */
+  width: 12px; /* 实心圆的直径 */
+  height: 12px; /* 实心圆的直径 */
+  border-radius: 50%; /* 圆形 */
+  background-color: transparent; /* 默认透明 */
+  transition: background-color 0.2s ease; /* 平滑过渡 */
+}
+
+.selected .circle::after {
+  background-color: rgb(160, 44, 83) /* 选中时变为实心红色 */
+}
+
+.submit-answer-button {
+  background-color: rgb(153, 0, 51);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+.submit-answer-button:hover {
+  background-color: rgb(128, 0, 40);
+}

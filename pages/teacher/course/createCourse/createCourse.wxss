@@ -1,0 +1,21 @@
+/* pages/student/course/createCourse.wxss */
+/* 标题样式 */
+.weui-form__title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.weui-input,
+.weui-textarea {
+  padding-left: 0; /* 去除输入框内边距 */
+}
+
+.button-area {
+  position: fixed;
+  bottom: 80px;
+  left: 0;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}

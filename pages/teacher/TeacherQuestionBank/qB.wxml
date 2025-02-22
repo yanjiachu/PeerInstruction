@@ -1,0 +1,45 @@
+<view class="container">
+
+    <!-- 标签搜索栏 -->
+    <view class="search-container">
+        <view class="tags-input">
+            <view wx:for="{{tags}}" wx:key="index" class="tag">
+                <text>{{item}}</text>
+                <view bindtap="deleteTag" data-index="{{index}}" class="delete-tag">x</view>
+            </view>
+            <input placeholder="{{placeholderText}}" value="{{currentTag}}" bindinput="inputTag" bindconfirm="handleConfirm" class="input-tag" />
+        </view>
+        <button class="search-button" bindtap="handleSearch">
+            <image src="/static/teacher/qBModule/icon/search.png" class="search-icon" />
+        </button>
+    </view>
+
+    <!-- 搜索显示和添加题目 -->
+    <view class="search-results">
+        <text class="results-count">搜索出 {{questionsCount}} 个满足要求的题目^_^</text>
+        <button class="add-button" bindtap="handleAddQuestion">添加新题</button>
+    </view>
+
+    <!-- 题目列表 -->
+    <view class="showBox">
+        <!-- 题目排序 -->
+        <view class="questionSort">
+            <picker bindchange="bindPickerChange" value="{{sortStandard}}" range="{{sortStandardList}}">
+                <view class="picker">
+                    当前选择: {{sortStandardList[sortStandard]}}
+                </view>
+            </picker>
+        </view>
+
+        <view class="list-container">
+            <image src="/static/teacher/qBModule/icon/qB.png" class="qB-icon" />
+            <view class="list" wx:for="{{itemsIndex}}" wx:key="id">
+                <!-- 每个题目 -->
+                <view class="list-item-bank" data-index="{{index}}" bindtap="goToOriginalQuestion">
+                    <text class="item-name">{{items[item].context}}</text>
+                    <image class="item-image" src="{{items[item].image}}" mode="aspectFit" wx:if="{{items[item].hasImage}}" />
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
