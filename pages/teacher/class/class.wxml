@@ -1,0 +1,104 @@
+<view class="container">
+  <view class="class-header">
+    <text class="class-name">{{className}}</text>
+    <view class="now-time">
+      <text>当前时间: {{currentTime}}</text>
+    </view>
+  </view>
+  <view class="class-management">
+    <button bindtap="startClass" class="start-class-button">开始上课</button>
+  </view>
+  <view class="class-subheader">
+    <view class="subtitle">当前课堂人数: {{studentCount}}</view>
+    <view class="subtitle">上课时间: {{formattedStartTime}} - {{formattedEndTime}}</view>
+  </view>
+
+  <!-- 已发布的题目 wx:if="{{currentQuestion}}"-->
+  <view class="published-questions">
+    <!-- 导航栏按钮 -->
+    <button bindtap="togglePublished" class="toggle-button" style="width: 100%;">
+      <view class="toggle-text">
+        {{publishedCollapsed ? '展开' : '收起'}}已发布的题目
+      </view>
+      <view class="toggle-icon">
+        <view class="arrow" style="{{publishedCollapsed ? 'transform: rotate(180deg);' : 'transform: rotate(0deg);'}}"></view>
+      </view>
+    </button>
+    <view class="current-question" hidden="{{publishedCollapsed}}">
+      <view class="question-context">{{currentQuestion.context}}</view>
+      <view wx:if="{{currentQuestion.hasImage}}" class="question-image">
+        <image src="{{currentQuestion.image}}" mode="aspectFit"></image>
+      </view>
+      <view class="question-options">
+        <block wx:for="{{currentQuestion.options}}" wx:key="index">
+          <button bindtap="selectOption" data-index="{{index}}" data-answer="{{item}}" class="option-button {{selectedOptionIndex === index ? 'selected' : ''}}">
+            <view class="circle"></view>
+            <text>{{letterMap[index]}}. {{item}}</text>
+          </button>
+        </block>
+      </view>
+      <text class="countdown">剩余时间: {{countdown}} 秒</text>
+      <button bindtap="endQuestion" class="publish-button">结束题目</button>
+      <button bindtap="showAnswer" wx:if="{{!isAnswerVisible}}" class="publish-button">显示答案</button>
+      <button bindtap="submitSelectedAnswer" class="submit-answer-button" wx:if="{{selectedOptionIndex !== null}}">提交答案</button>
+      <view wx:if="{{isAnswerVisible}}">
+        <view class="question-answer">答案: {{currentQuestion.answer}}</view>
+        <view class="question-details">难度: {{currentQuestion.difficulty}}, 类型: {{currentQuestion.type}}</view>
+        <view class="question-labels">tag1: {{currentQuestion.questionLabel1}}, tag2: {{currentQuestion.questionLabel2}}</view>
+      </view>
+      <!-- <button bindtap="viewDataAnalysis" class="view-data-analysis-button" wx:if="{{currentQuestion && currentQuestion.publishCount > 0}}">
+        查看数据分析
+      </button> -->
+    </view>
+  </view>
+  <!-- 未发布的题目 -->
+  <view class="unpublished-questions" wx:if="{{unpublishedQuestions.length > 0}}">
+    <!-- 导航栏按钮 -->
+    <button bindtap="toggleUnpublished" class="toggle-button" style="width: 100%;">
+      <view class="toggle-text">
+        {{unpublishedCollapsed ? '展开' : '收起'}}未发布的题目
+      </view>
+      <view class="toggle-icon">
+        <view class="arrow" style="{{unpublishedCollapsed ? 'transform: rotate(180deg);' : 'transform: rotate(0deg);'}}"></view>
+      </view>
+    </button>
+    <!-- 折叠内容 -->
+    <view wx:if="{{!unpublishedCollapsed}}" class="unpublished-content">
+      <view class="question-list">
+        <view class="question-item" wx:for="{{unpublishedQuestions}}" wx:key="id" wx:for-index="index">
+          <text class="question-number">题目 {{index + 1}}:</text> <!-- 添加题目序号 -->
+          <view class="question-context">{{item.context}}</view>
+          <view class="question-options">
+            <block wx:for="{{item.options}}" wx:key="index" wx:for-item="option">
+              <view>{{letterMap[index]}}. {{option}}</view>
+            </block>
+          </view>
+          <view wx:if="{{item.hasImage}}" class="question-image">
+            <image src="{{item.image}}" mode="aspectFit"></image>
+          </view>
+          <view class="question-answer">答案: {{item.answer}}</view>
+          <view class="question-details">难度: {{item.difficulty}}, 类型: {{item.type}}</view>
+          <text class="question-labels">标签1: {{item.questionLabel1}}, 标签2: {{item.questionLabel2}}</text>
+          <view class="publish-count">已发布次数: {{item.publishCount}}</view>
+          <button class="publish-button" bindtap="publishQuestion" data-id="{{item.id}}" wx:if="{{!questionPublishStatus[item.id]}}">
+            发布题目
+          </button>
+          <button class="publish-button" bindtap="publishQuestion" data-id="{{item.id}}" wx:elif="{{questionPublishStatus[item.id]}}">
+            再次发布
+          </button>
+          <button bindtap="viewDataAnalysis" class="view-data-analysis-button" data-id="{{item.id}}" wx:if="{{item.publishCount > 0}}">
+            查看数据分析
+          </button>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="no-questions" wx:if="{{unpublishedQuestions.length === 0}}">
+    <text>暂无题目</text>
+  </view>
+
+
+
+
+  <button class="end-class-button" bindtap="endClass">结束课堂</button>
+</view>
