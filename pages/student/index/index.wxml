@@ -1,0 +1,87 @@
+<!--pages/student/index/index.wxml-->
+<view class="page">
+
+  <view class="banner">
+    <swiper class="swiper-container" autoplay="true" interval="3000" duration="500" indicator-dots="true">
+      <swiper-item>
+        <view class="swiper-item-content">
+          <image class="swiper-image" mode="aspectFill"   src="https://images.pexels.com/photos/301920/pexels-photo-301920.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"></image>
+        </view>
+      </swiper-item>
+      <swiper-item>
+        <view class="swiper-item-content">
+          <image class="swiper-image" mode="aspectFill"   src="https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"></image>
+        </view>
+      </swiper-item>
+      <swiper-item>
+        <view class="swiper-item-content">
+          <image class="swiper-image" mode="aspectFill"   src="https://images.pexels.com/photos/1181395/pexels-photo-1181395.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"></image>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+
+<!-- 标签栏 -->
+  <view class="tab-bar">
+    <view class="tab-bar-left">
+      <view 
+        class="tab-item" 
+        wx:for="{{tabs}}" 
+        wx:key="name" 
+        bindtap="switchTab" 
+        data-index="{{index}}" 
+        style="color: {{activeTab === index ? '#000' : '#999'}};">
+        {{item.name}}
+        <!-- 蓝色粗线 -->
+        <view 
+          class="tab-underline" 
+          wx:if="{{activeTab === index}}">
+        </view>
+      </view>
+    </view>
+
+    <!-- 加号按钮
+    <view class="tab-bar-right">
+      <view class="add-button" bindtap="onCreateCourseTap">+</view>
+    </view> -->
+  </view>
+
+  <!-- 细灰线 -->
+  <view class="divider-line"></view>
+
+  <!-- 课程列表 -->
+  <view class="course-list">
+    <view wx:for="{{courses}}" wx:key="_id" class="course-card" style="background-color: {{item.bgColor}}" bindtap="onCourseCardTap" data-id="{{item._id}}" data-coursename="{{item.courseName}}" >
+      <view class="course-info">
+        <text class="course-name">{{item.courseName}}</text>
+        <text class="course-id">{{item._id}}</text>
+        <view class="course-description-container">
+          <text class="course-description">{{utils.truncate(item.description)}}</text>
+          <text class="course-teacher">{{item.teacher.teacherName}}</text>
+        </view>
+      </view>
+      <view 
+        wx:if="{{activeTab}}"
+        class="course-button" 
+        catchtap="onJoinTap"
+        data-parent-id="{{item._id}}">
+        <mp-icon icon="download" color="white" size="{{25}}"></mp-icon>
+      </view>
+    </view>
+  </view>
+
+
+  <my-component tab-bar="{{tabBar}}" tab-index="{{tabIndex}}" />
+
+  <mp-dialog ext-class="dialog" mask="{{true}}" mask-closable="{{false}}" title="是否确认加入该课程？"  show="{{showDialog}}" bindbuttontap="onDialogButtonTap" buttons="{{buttons}}">
+  </mp-dialog>
+
+  <wxs module="utils">
+    module.exports = {
+      truncate: function(description) {
+        if (!description) return '';
+        return description.length > 15 ? description.slice(0, 15) + '...' : description;
+      }
+    };
+  </wxs>
+</view>
