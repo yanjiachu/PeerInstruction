@@ -1,0 +1,111 @@
+/* 容器样式 */
+.container {
+  padding: 20rpx;
+  background-color: #ffe5e5; /* 浅红色背景，与讨论区页面一致 */
+  min-height: 100vh;
+}
+
+/* 帖子头部样式 */
+.post-header {
+  margin-bottom: 20rpx;
+  border-bottom: 2rpx solid #ff4d4f; /* 红色下划线 */
+  padding-bottom: 15rpx;
+}
+
+.post-title {
+  font-size: 42rpx; /* 与讨论区标题字体一致 */
+  color: #d32f2f; /* 深红色 */
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10rpx;
+}
+
+.post-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx; /* 较小的辅助信息字体 */
+  color: #666666; /* 辅助信息灰色 */
+  margin-bottom: 15rpx;
+}
+
+.post-author {
+  color: #ff4d4f; /* 红色突出作者 */
+}
+
+.post-time {
+  color: #999999; /* 灰色时间 */
+}
+
+.post-content {
+  font-size: 32rpx;
+  color: #333333; /* 主内容深灰色，增加可读性 */
+  line-height: 1.6; /* 提高行距 */
+}
+
+/* 回复列表样式 */
+.reply-list {
+  margin-top: 20rpx;
+  padding-bottom: 20rpx;
+  max-height: 500rpx; /* 限制列表高度 */
+  overflow-y: auto; /* 添加滚动条 */
+}
+
+.reply-item {
+  background-color: #ffffff; /* 白色背景 */
+  border-radius: 10rpx;
+  padding: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+}
+
+.reply-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10rpx;
+}
+
+.reply-author {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #d32f2f; /* 深红色，强调回复者 */
+}
+
+.reply-time {
+  font-size: 26rpx;
+  color: #999999; /* 灰色时间 */
+}
+
+.reply-content {
+  font-size: 30rpx; /* 略大于作者信息字体 */
+  color: #444444; /* 深灰色内容 */
+  line-height: 1.5; /* 提高行距，增强可读性 */
+}
+
+/* 暂无回复提示 */
+.no-reply {
+  text-align: center;
+  color: #999999; /* 灰色提示文本 */
+  font-size: 28rpx;
+  margin-top: 50rpx;
+}
+
+/* 回复按钮样式 */
+.reply-btn {
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.reply-button {
+  background-color: #ff6666; /* 中等红色 */
+  color: #ffffff; /* 白色文字 */
+  font-size: 32rpx;
+  padding: 15rpx 40rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 3rpx 6rpx rgba(0, 0, 0, 0.2); /* 添加按钮阴影 */
+  transition: all 0.3s ease; /* 添加过渡效果 */
+}
+
+.reply-button:active {
+  background-color: #d32f2f; /* 点击时深红色 */
+  box-shadow: 0 1rpx 3rpx rgba(0, 0, 0, 0.2); /* 阴影收缩 */
+}

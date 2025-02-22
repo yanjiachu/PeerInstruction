@@ -1,0 +1,36 @@
+<view class="container">
+  <!-- 帖子内容 -->
+  <view class="post-header">
+    <text class="post-title">{{post.title}}</text>
+    <view class="post-info">
+      <text class="post-author">作者：{{post.author}}</text>
+      <text class="post-time">{{post.date}}</text>
+    </view>
+    <view class="post-content">
+      <text>{{post.content}}</text>
+    </view>
+  </view>
+
+  <!-- 回复列表 -->
+  <scroll-view class="reply-list" scroll-y="true" style="height: 500rpx;">
+    <block wx:for="{{replies}}" wx:key="id">
+      <view class="reply-item">
+        <view class="reply-header">
+          <text class="reply-author">回复者：{{item.username}}</text>
+          <text class="reply-time">{{item.time}}</text>
+        </view>
+        <view class="reply-content">
+          <text>{{item.content}}</text>
+        </view>
+      </view>
+    </block>
+    <view wx:if="{{replies.length === 0}}" class="no-reply">
+      <text>暂时没有回复</text>
+    </view>
+  </scroll-view>
+
+  <!-- 回复按钮 -->
+  <view class="reply-btn">
+    <button class="reply-button" bindtap="onReplyClick">进行回复</button>
+  </view>
+</view>
