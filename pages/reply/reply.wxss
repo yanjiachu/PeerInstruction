@@ -1,0 +1,58 @@
+/* 容器样式 */
+.container {
+  padding: 20rpx;
+  background-color: #ffe5e5; /* 浅红色背景，与其他页面一致 */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+ 
+  align-items: center; /* 水平居中内容 */
+}
+
+/* 回复内容输入框 */
+.input-section {
+  width: 100%; /* 占满父容器宽度 */
+  margin-bottom: 30rpx; /* 下方留出间距 */
+}
+
+.reply-input {
+  width: 100%; /* 输入框宽度占满 */
+  height: 200rpx; /* 输入框高度 */
+  font-size: 32rpx; /* 字体大小 */
+  padding: 20rpx; /* 内边距 */
+  border: 2rpx solid #ff4d4f; /* 红色边框，与标题样式一致 */
+  border-radius: 10rpx; /* 圆角设计 */
+  background-color: #ffffff; /* 白色背景 */
+  color: #333333; /* 深灰色文字 */
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+  line-height: 1.5; /* 提高行距 */
+}
+
+/* 输入框的占位符样式 */
+.reply-input::placeholder {
+  color: #999999; /* 浅灰色占位符 */
+  font-size: 28rpx;
+}
+
+/* 发送按钮 */
+.button-section {
+  width: 100%; /* 按钮宽度占满 */
+  text-align: center; /* 居中对齐 */
+  margin-top: 20rpx;
+}
+
+.send-button {
+  background-color: #ff6666; /* 中等红色，与其他页面按钮一致 */
+  color: #ffffff; /* 白色文字 */
+  font-size: 32rpx; /* 按钮字体大小 */
+  padding: 15rpx 40rpx; /* 内边距 */
+  border-radius: 10rpx; /* 圆角设计 */
+  box-shadow: 0 3rpx 6rpx rgba(0, 0, 0, 0.2); /* 添加阴影 */
+  transition: all 0.3s ease; /* 动画过渡 */
+}
+
+/* 按钮点击效果 */
+.send-button:active {
+  background-color: #d32f2f; /* 深红色 */
+  box-shadow: 0 1rpx 3rpx rgba(0, 0, 0, 0.2); /* 阴影减弱 */
+}
